@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
+
+namespace PetShopApp.DB
+{
+    public partial class Category
+    {
+        public Category()
+        {
+            ProductTypes = new HashSet<ProductType>();
+            Products = new HashSet<Product>();
+        }
+
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
+
+        public virtual ICollection<ProductType> ProductTypes { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
+    }
+}
